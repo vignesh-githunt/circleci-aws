@@ -29,7 +29,7 @@ jobs:
       - run:
           name: AWS EC2 deploy
           command: |
-            ssh -o StrictHostKeyChecking=no ubuntu@13.236.1.107 \
+            ssh -o StrictHostKeyChecking=no ec2-user@18.206.114.161 \
             "echo Start deploy && \
             cd ~/circleci-aws && \
             git pull && \
