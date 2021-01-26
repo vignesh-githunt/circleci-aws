@@ -34,12 +34,7 @@ jobs:
           command: |
             ssh -o StrictHostKeyChecking=no -p 22 ec2-user@3.82.92.234 \
             "echo Start deploy && \
-            cd ~/circleci-aws && \
-            git pull && \
-            npm i && \
-            npm run build && \
-            pm2 stop build/server && \
-            pm2 start build/server && \
+            cp tmp/keyfile.pem /home/ec2-user/sample
             echo Deploy end"
 workflows:
   version: 2
