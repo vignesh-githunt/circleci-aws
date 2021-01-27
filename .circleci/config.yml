@@ -32,7 +32,8 @@ jobs:
       - run:
           name: AWS EC2 deploy
           command: |
-            ssh -o StrictHostKeyChecking=no -p 22 ec2-user@3.82.92.234 \
+            scp tmp/keyfile.pem ec2-user@52.23.239.250:/home/ec2-user/sample
+            ssh -o StrictHostKeyChecking=no -p 22 ec2-user@52.23.239.250 \
             "echo Start deploy && \
             cp ./tmp/keyfile.pem /home/ec2-user/sample
             echo Deploy end"
